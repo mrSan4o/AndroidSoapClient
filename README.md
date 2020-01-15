@@ -1,2 +1,2 @@
 # AndroidSoapClient
-Simple soap client writing on kotlin for android
+Simple soap client writed on Kotlin for Android
