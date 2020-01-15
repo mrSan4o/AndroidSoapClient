@@ -1,0 +1,46 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+def core_ktx = '1.1.0'
+def timber = '4.7.1'
+def junit = '4.12'
+def robolectric = '4.3-beta-1'
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+    implementation "androidx.core:core-ktx:$core_ktx"
+
+    implementation "commons-io:commons-io:2.6"
+
+    implementation 'org.jsoup:jsoup:1.12.1'
+
+    // Logging
+    implementation "com.jakewharton.timber:timber:$timber"
+
+    testImplementation "junit:junit:$junit"
+    testImplementation "org.robolectric:robolectric:$robolectric"
+//    androidTestImplementation "androidx.test:runner:1.2.0"
+}
